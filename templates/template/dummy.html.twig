@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello dummyController!{% endblock %}
+
+
+
+
+{% block body %}
+{{text}}
+<ul>
+{% for  year in years %}
+{% endfor %}
+{{dump(years)}} 
+</ul>
+{% endblock %}

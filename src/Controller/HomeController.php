@@ -23,5 +23,29 @@ class HomeController extends AbstractController
     {
       return new Response(content:"Hello Word !");
     }
+    #[Route ('/dummy', name: 'app_dummy')]
+    public function dummy(): Response
+    {
+      $text ="hello this is home !";
+      $tabyear =[2020,2021,2022,2023];
+      return $this->render(view:'/dummy.html.twig',parameters:[
+        "Text"=>$text,
+        "years"=>$tabyear
+    
+      ]);
+     
+    }
+  #[Route ('/add-book', name: "app_book_add")]
+  public function addBook():Respose
+  {
+    $book = new Book();
 
+    $bookForm = $this->createForm(type: BookType ::class, data: $book);
+   
+    return $this->render(view:'dummy/book.html.twig',parameters: [
+      "bookForm" => $bookForm
+  ]);
+ }
 }
+ 
+

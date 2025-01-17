@@ -11,8 +11,14 @@ class TemplateController extends AbstractController
     #[Route('/template', name: 'app_template')]
     public function index(): Response
     {
+        $text ="hello this is index !";
+        $tabYear =[2020,2021,2022,2023];
         return $this->render('template/index.html.twig', [
-            'controller_name' => 'TemplateController',
-        ]);
+            'text' =>$text,
+            'years' =>$years,
+            ]
+           
+  
+        );
     }
 }
